@@ -1,0 +1,3 @@
+Today i learned about dictionaries
+ functions are reusable blocks of code
+ Jefe is the best codename ever
