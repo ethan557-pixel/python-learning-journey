@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Basics</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 2rem auto; padding: 1rem; background: #0f0f0f; color: white; }
+        button { background: #1D9E75; color: white; border: none; padding: 8px 16px; border-radius: 99px; cursor: pointer; margin: 4px; }
+        input { background: #1a1a1a; color: white; border: 1px solid #333; padding: 8px 12px; border-radius: 8px; margin: 4px; }
+        #output { background: #1a1a1a; padding: 1rem; border-radius: 8px; margin-top: 1rem; min-height: 50px; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Interactive</h1>
+    
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <input type="number" id="ageInput" placeholder="Enter your age">
+    <button onclick="analyze()">Analyze</button>
+
+    <div id="output">Enter your details above!</div>
+
+    <script>
+        function analyze() {
+            let name = document.getElementById("nameInput").value
+            let age = parseInt(document.getElementById("ageInput").value)
+
+            if (!name || !age) {
+                document.getElementById("output").innerText = "Please fill in both fields!"
+                return
+            }
+
+            let message = `Hey ${name}! You are ${age} years old.\n`
+            
+            if (age < 18) {
+                message += "You are a minor."
+            } else if (age < 30) {
+                message += "You are in your prime!"
+            } else if (age < 50) {
+                message += "You are a seasoned professional!"
+            } else {
+                message += "You are a legend!"
+            }
+
+            message += `\nIn 10 years you will be ${age + 10}.`
+
+            document.getElementById("output").innerText = message
+        }
+    </script>
+</body>
+</html>
